@@ -1,0 +1,91 @@
+.root {
+  width: 100%;
+}
+img {
+  width: 40%;
+  height: 40%;
+}
+.card-img-desc {
+  display: flex;
+}
+hr {
+  background: black;
+  height: 1px;
+}
+.productsSection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card {
+  width: 30%;
+  min-height: 50px;
+  height: 400px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: white;
+  position: relative;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.card:hover {
+  background-color: lightgray;
+}
+.card p {
+  font-size: 11px;
+}
+.chart-text {
+  margin: 8px;
+  font-size: 20px;
+}
+.fa-spinner {
+  font-size: 30px;
+  color: rgb(255, 208, 0);
+}
+.chart {
+  position: fixed;
+  background-color: rgba(18, 19, 21, 0.948);
+  width: 100%;
+  color: rgb(255, 255, 255);
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 10px;
+  z-index: 5;
+}
+.card button {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 15px;
+  background-color: rgba(255, 208, 0);
+  color: black;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.fa-shopping-cart {
+  font-size: 25px;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+.nav a {
+  text-decoration: none;
+}
+.nav a:hover {
+  border-bottom: 1px solid rgba(255, 208, 0);
+}
