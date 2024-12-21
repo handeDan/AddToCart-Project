@@ -33,8 +33,11 @@ hr {
 .card:hover {
   background-color: lightgray;
 }
-.card p {
+.card-img-desc {
   font-size: 11px;
+}
+.card-texts p {
+  font-size: 15px;
 }
 .chart-text {
   margin: 8px;
@@ -62,17 +65,22 @@ hr {
   background-color: rgba(255, 208, 0);
   color: black;
 }
+.card button:hover {
+  background-color: rgba(18, 19, 21, 0.948) !important;
+  color: white !important;
+}
 header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.cart-button {
+.cart-button a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
+  text-decoration: none;
 }
 .fa-shopping-cart {
   font-size: 25px;
@@ -88,4 +96,54 @@ header {
 }
 .nav a:hover {
   border-bottom: 1px solid rgba(255, 208, 0);
+}
+.item-info {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: auto;
+  border-bottom: 1px solid black;
+}
+.cartPart1 {
+  width: 50%;
+}
+.cartPart2 {
+  width: 50%;
+
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  justify-content: right;
+}
+.MyCart-text {
+  font-size: 25px;
+  font-weight: bold;
+  background-color: rgba(255, 208, 0);
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+.w3-table {
+  width: 50%;
+  margin: auto;
+}
+.yan {
+  text-align: center !important;
+}
+.cartPage-button {
+  font-size: 20px;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: rgba(255, 208, 0);
+  display: flex;
+  margin: auto;
+}
+
+.cartPage-button:hover {
+  color: white;
+  background-color: rgba(18, 19, 21, 0.948);
+  cursor: pointer;
 }

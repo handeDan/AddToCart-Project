@@ -1,22 +1,26 @@
 import React from "react";
 
-function Card({
-  productTitle,
-  productPrice,
-  productDescription,
-  productImg,
-  addToChart,
-}) {
+function Card({ product, isInCart, addToCart, removeCart }) {
   return (
     <div className="card">
-      <h4>{productTitle}</h4>
-      <p>Price: {productPrice} TL</p>
-      <div className="card-img-desc">
-        <p>{productDescription}</p>
-        <img src={productImg} />
+      <div className="card-texts">
+        <h4>{product.title}</h4>
+        <p>Price: {product.price} TL</p>
       </div>
-      <button onClick={addToChart} className="w3-button">
-        Add to cart
+      <div className="card-img-desc">
+        <p>{product.description}</p>
+        <img src={product.image} />
+      </div>
+      <button
+        onClick={() => {
+          if (isInCart(product.id)) {
+            removeCart(product); // Eğer sepetteyse, çıkartıyoruz
+          } else {
+            addToCart(product); // Eğer sepette değilse, ekliyoruz
+          }
+        }}
+      >
+        {isInCart(product.id) ? "Remove" : "Add to Cart"}
       </button>
     </div>
   );

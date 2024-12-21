@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./card";
 
-function MainPage({ products, addToChart }) {
+function MainPage({ products, addToCart, removeCart, isInCart }) {
   return (
     <>
       <div className="w3-content productsSection">
@@ -9,11 +9,10 @@ function MainPage({ products, addToChart }) {
           products.map((product, index) => (
             <Card
               key={index}
-              productTitle={product.title}
-              productPrice={product.price}
-              productDescription={product.description}
-              productImg={product.image}
-              addToChart={addToChart}
+              product={product}
+              addToCart={addToCart}
+              removeCart={removeCart}
+              isInCart={isInCart}
             />
           ))}
       </div>
