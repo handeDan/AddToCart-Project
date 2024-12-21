@@ -1,7 +1,14 @@
 import React from "react";
 import Card from "./card";
 
-function MainPage({ products, addToCart, removeCart, isInCart }) {
+function MainPage({
+  products,
+  addToCart,
+  removeCart,
+  isInCart,
+  addToFav,
+  isFav,
+}) {
   return (
     <>
       <div className="w3-content productsSection">
@@ -13,6 +20,8 @@ function MainPage({ products, addToCart, removeCart, isInCart }) {
               addToCart={addToCart}
               removeCart={removeCart}
               isInCart={isInCart}
+              addToFav={addToFav}
+              isFav={isFav}
             />
           ))}
       </div>

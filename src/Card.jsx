@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card({ product, isInCart, addToCart, removeCart }) {
+function Card({ product, isInCart, addToCart, removeCart, addToFav, isFav }) {
   return (
     <div className="card">
       <div className="card-texts">
@@ -11,6 +11,13 @@ function Card({ product, isInCart, addToCart, removeCart }) {
         <p>{product.description}</p>
         <img src={product.image} />
       </div>
+      <i
+        className="fa fa-heart card-fav"
+        onClick={() => {
+          addToFav(product);
+        }}
+        style={{ color: isFav(product.id) ? "red" : null }}
+      ></i>
       <button
         onClick={() => {
           if (isInCart(product.id)) {

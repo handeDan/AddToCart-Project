@@ -69,6 +69,13 @@ hr {
   background-color: rgba(18, 19, 21, 0.948) !important;
   color: white !important;
 }
+.fav-button a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
 header {
   display: flex;
   flex-direction: row;
@@ -89,7 +96,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 30px;
+  gap: 60px;
 }
 .nav a {
   text-decoration: none;
@@ -142,8 +149,17 @@ header {
   margin: auto;
 }
 
-.cartPage-button:hover {
-  color: white;
-  background-color: rgba(18, 19, 21, 0.948);
+button:hover {
+  cursor: pointer;
+}
+.card-fav {
+  font-size: 20px;
+  position: absolute;
+  left: 15px;
+  bottom: 16px;
+}
+.card-fav:hover {
+  color: red;
+  font-size: 20px;
   cursor: pointer;
 }

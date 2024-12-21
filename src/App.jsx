@@ -4,10 +4,13 @@ import MainPage from "./MainPage";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
+import Favourites from "./Favourites";
 
 function App() {
   const [products, setProducts] = useState([]); //axios api/endpointinden gelen datayı products değişkenimde saklamak için. çünkü data bilgisi değişse de bana gelsin, kullanim istiyorum..
   const [cart, setCart] = useState([]); //sepete eklemekle alakalı kısım..
+  const [fav, setFav] = useState([]); //favorilere eklemekle alakalı kısım..
+
   useEffect(() => {
     axios
       .get("https://fakestoreapi.com/products?limit=6")
@@ -20,6 +23,8 @@ function App() {
   }, []); //ilk açılışta çok bekletmesin diye, 1 kere getiriyoruz datayı
   const isInCart = (productId) =>
     cart.some((product) => product.id === productId);
+
+  const isFav = (productId) => fav.some((product) => product.id === productId);
 
   //butona tıklayınca sepette sayı artsın:
   const addToCart = (product) => {
@@ -61,6 +66,16 @@ function App() {
       return prevCart;
     });
   };
+
+  //fav ikonuna tıklayınca:
+  const addToFav = (product) => {
+    if (fav.find((i) => i.id === product.id)) {
+      setFav(fav.filter((i) => i.id !== product.id));
+    } else {
+      setFav([...fav, product]);
+    }
+  };
+
   return (
     <Router>
       <div>
@@ -70,10 +85,15 @@ function App() {
             <h2 className="fa fa-spinner"> E-SHOP</h2>
             <div className="nav">
               <Link to="/">Main Page</Link>
-              <Link to="/Favourites.jsx">Favourites</Link>
+              <div className="fav-button">
+                <Link to="/Favourites">
+                  Favourites
+                  <div className="fa fa-heart"></div>
+                </Link>
+              </div>
             </div>
             <div className="cart-button">
-              <Link to="/CartPage">
+              <Link to="/MyCart">
                 <div className="fa fa-shopping-cart"></div>
                 <h2 className="chart-text">Cart: {cart.length}</h2>
               </Link>
@@ -92,10 +112,13 @@ function App() {
                 addToCart={addToCart}
                 removeCart={removeCart}
                 isInCart={isInCart}
+                addToFav={addToFav}
+                isFav={isFav}
               />
             }
           />
-          <Route path="/CartPage" element={<CartPage cart={cart} />} />
+          <Route path="/MyCart" element={<CartPage cart={cart} />} />
+          <Route path="/Favourites" element={<Favourites fav={fav} />} />
         </Routes>
       </div>
     </Router>
