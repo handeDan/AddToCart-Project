@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./card";
+import CardComponent from "./CardComponent";
 
 function MainPage({
   products,
@@ -14,7 +14,7 @@ function MainPage({
       <div className="w3-content productsSection">
         {products &&
           products.map((product, index) => (
-            <Card
+            <CardComponent
               key={index}
               product={product}
               addToCart={addToCart}

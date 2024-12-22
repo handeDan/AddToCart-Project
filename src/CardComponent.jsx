@@ -1,6 +1,13 @@
 import React from "react";
 
-function Card({ product, isInCart, addToCart, removeCart, addToFav, isFav }) {
+export default function CardComponent({
+  product,
+  isInCart,
+  addToCart,
+  removeCart,
+  addToFav,
+  isFav,
+}) {
   return (
     <div className="card">
       <div className="card-texts">
@@ -32,5 +39,3 @@ function Card({ product, isInCart, addToCart, removeCart, addToFav, isFav }) {
     </div>
   );
 }
-
-export default Card;
