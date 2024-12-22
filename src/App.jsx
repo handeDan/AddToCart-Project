@@ -10,17 +10,31 @@ function App() {
   const [products, setProducts] = useState([]); //axios api/endpointinden gelen datayı products değişkenimde saklamak için. çünkü data bilgisi değişse de bana gelsin, kullanim istiyorum..
   const [cart, setCart] = useState([]); //sepete eklemekle alakalı kısım..
   const [fav, setFav] = useState([]); //favorilere eklemekle alakalı kısım..
+  const [loading, setLoading] = useState(true); // Loading durumu
 
   useEffect(() => {
     axios
       .get("https://fakestoreapi.com/products?limit=6")
       .then(function (response) {
         setProducts(response.data);
+        setLoading(false); // Yükleme tamamlandığında loading durumu false olacak
       })
       .catch(function (error) {
         console.error(error);
+        setLoading(false); // Yükleme hatalı olsa da loading durumu false olacak
       });
   }, []); //ilk açılışta çok bekletmesin diye, 1 kere getiriyoruz datayı
+  if (loading) {
+    // Loading işlemi sırasında gösterilecek imge
+    return (
+      <div className="loading">
+        <div>
+          Loading...{" "}
+          <img className="loading-img" src="spinner.gif" alt="loading" />
+        </div>
+      </div>
+    );
+  }
   const isInCart = (productId) =>
     cart.some((product) => product.id === productId);
 
@@ -82,9 +96,14 @@ function App() {
         {/* Sayfalar arasında geçiş yapacak linkler */}
         <div className="chart">
           <header>
-            <h2 className="fa fa-spinner"> E-SHOP</h2>
+            <h2 className="fa fa-spinner">
+              <Link to="/"> E-SHOP</Link>
+            </h2>
             <div className="nav">
-              <Link to="/">Main Page</Link>
+              <Link to="/">
+                Main Page
+                <i class="fa fa-home" aria-hidden="true"></i>
+              </Link>
               <div className="fav-button">
                 <Link to="/Favourites">
                   Favourites
