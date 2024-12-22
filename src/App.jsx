@@ -102,7 +102,7 @@ function App() {
             <div className="nav">
               <Link to="/">
                 Main Page
-                <i class="fa fa-home" aria-hidden="true"></i>
+                <i className="fa fa-home" aria-hidden="true"></i>
               </Link>
               <div className="fav-button">
                 <Link to="/Favourites">
