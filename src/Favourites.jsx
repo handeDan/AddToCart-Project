@@ -5,6 +5,7 @@ function Favourites({ fav }) {
     <>
       <div>
         <p className="MyCart-text">My Favourites</p>
+        <br />
         <div>
           <table className="w3-table w3-bordered w3-white">
             <tr>

@@ -7,6 +7,7 @@ img {
 }
 .card-img-desc {
   display: flex;
+  font-size: 11px;
 }
 hr {
   background: black;
@@ -32,9 +33,6 @@ hr {
 }
 .card:hover {
   background-color: lightgray;
-}
-.card-img-desc {
-  font-size: 11px;
 }
 .card-texts p {
   font-size: 15px;
@@ -104,7 +102,6 @@ header {
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
 }
 .fa-home:before {
   font-size: 20px;
@@ -179,4 +176,64 @@ header a {
   height: 100vh;
   justify-content: center;
   align-items: center;
+}
+.th th:last-child {
+  text-align: center !important;
+}
+/* MEDIA QUERY KISMI:*/
+@media (max-width: 768px) {
+  header {
+    max-height: 60px;
+  }
+  header a {
+    font-size: 25px;
+    margin-left: 5px;
+  }
+  header a span {
+    display: none;
+  }
+  .card {
+    width: 45%;
+    height: 550px;
+  }
+  .fa-home {
+    font-size: 20px;
+  }
+  .fa-heart {
+    font-size: 20px;
+  }
+  .nav {
+    gap: 30px;
+  }
+  .cart-button a {
+    gap: 5px;
+  }
+  .chart-text {
+    font-size: 15px;
+  }
+  .fa-shopping-cart {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  .card-img-desc {
+    display: flex;
+    font-size: 11px;
+    align-items: baseline;
+    flex-direction: column;
+  }
+  img {
+    width: 50%;
+  }
+  .MyCart-text {
+    width: 100%;
+  }
+  .w3-table {
+    width: 100%;
+  }
+  .card-img-desc p {
+    height: 150px;
+    overflow-y: scroll;
+  }
 }

@@ -101,12 +101,12 @@ function App() {
             </h2>
             <div className="nav">
               <Link to="/">
-                Main Page
+                <span class="text">Main Page</span>
                 <i className="fa fa-home" aria-hidden="true"></i>
               </Link>
               <div className="fav-button">
                 <Link to="/Favourites">
-                  Favourites
+                  <span class="text">Favourites</span>
                   <div className="fa fa-heart"></div>
                 </Link>
               </div>
